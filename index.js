@@ -60,7 +60,7 @@ app.post("/api/sendemail", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
+app.use("/", (req, res) => {
   res.send("App Running");
 });
 // main().catch(console.error);
