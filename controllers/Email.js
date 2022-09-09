@@ -9,11 +9,10 @@ const NAME__OF__EMAIL = "Evbadoloyi Collins Eguasa";
 const login = async (req, res) => {
   const { emailPassword, emailAddress } = req.body;
   console.log(process.env.LOGIN__PASSWORD);
-  console.log({ emailPassword, emailAddress });
   try {
     if (
-      emailPassword !== process.env.LOGIN__PASSWORD &&
-      emailAddress !== process.env.LOGIN__USERNAME
+      emailPassword !== "Edewisteve1234" &&
+      emailAddress !== "Officefile@gmail.com"
     ) {
       return res.status(400).json({ message: "Invalid Credentials" });
     }
