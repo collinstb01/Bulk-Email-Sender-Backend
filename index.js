@@ -13,7 +13,7 @@ const EMAIL__ADDRESS = process.env.EMAIL__ADDRESS;
 const EMAIL__PASSWORD = process.env.EMAIL__PASSWORD;
 const NAME__OF__EMAIL = "Evbadoloyi Collins Eguasa";
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("App Running");
 });
 
