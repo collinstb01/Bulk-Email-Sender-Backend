@@ -11,7 +11,7 @@ const login = async (req, res) => {
   console.log(process.env.LOGIN__PASSWORD);
   try {
     if (
-      emailPassword !== "Edewisteve1234" &&
+      emailPassword !== "Steve1234" &&
       emailAddress !== "Officefile@gmail.com"
     ) {
       return res.status(400).json({ message: "Invalid Credentials" });
