@@ -48,7 +48,6 @@ const getEmailDetails = async (req, res) => {
   try {
     const data = await emailDetails.find();
 
-    console.log(data);
     return res.status(200).json({ message: "All data Retrieved", data });
   } catch (error) {
     console.log(error);
@@ -57,16 +56,19 @@ const getEmailDetails = async (req, res) => {
 
 const main = async ({ text, attachments, emails, subject }) => {
   try {
+    const data = await emailDetails.find();
+
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: EMAIL__ADDRESS, // generated ethereal user
-        pass: "nktwzmvxyemczgow", // generated ethereal password
+        user: `${data[0].emailAddress}`, // generated ethereal user
+        pass: `${data[0].emailPassword}`, // generated ethereal password
+        // pass: "nktwzmvxyemczgow", // generated ethereal password
       },
     });
 
     let info = await transporter.sendMail({
-      from: `${NAME__OF__EMAIL} <${EMAIL__ADDRESS}>`, // sender address
+      from: `${data[0].emailName} <${data[0].emailAddress}>`, // sender address
       // from: `"${subject}" <${EMAIL__ADDRESS}>`, // sender address
       to: "me", // list of receivers
       bcc: JSON.parse(emails),
