@@ -27,4 +27,4 @@ mongoose
       console.log("App running at port 5001 And Successfully Connected")
     )
   )
-  .catch(() => console.log(error));
+  .catch((error) => console.log(error));

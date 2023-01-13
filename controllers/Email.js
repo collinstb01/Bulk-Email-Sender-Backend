@@ -1,10 +1,7 @@
 const mongoose = require("mongoose");
 const emailDetails = require("../models/Email.js");
 const nodemailer = require("nodemailer");
-
-const EMAIL__ADDRESS = process.env.EMAIL__ADDRESS;
-const EMAIL__PASSWORD = process.env.EMAIL__PASSWORD;
-const NAME__OF__EMAIL = "Evbadoloyi Collins Eguasa";
+dotenv.config();
 
 const login = async (req, res) => {
   const { emailPassword, emailAddress } = req.body;
